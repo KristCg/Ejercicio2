@@ -1,3 +1,5 @@
+import java.util.stream.IntStream;
+
 public class Salones{
     private int Numero;
     private String Tipo;
@@ -38,12 +40,12 @@ public class Salones{
     }
 
 
-    public boolean validarReglas(int CantidadPersonas){
-        if (CantidadPersonas <= capacidad ){
+    public boolean validarReglas(int CantidadPersonas, int Capacidad){
+        if (CantidadPersonas <= Capacidad ){
             return true;
         }
 
-        else if (CantidadPersonas > capacidad){
+        else {
             return false;
         }
 
@@ -52,10 +54,29 @@ public class Salones{
     public boolean validarDisponibilidad(date Fecha, int horaInicio, int horaFin){
         date listaFechas = new listaFechas[0];
         for (int i = 0; i < listaFechas.length; i++ ){
-            int[] listaHoras = {7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23};
+            int listaHoras[] = {7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23};
+            
+            IntStream rango = IntStream.range(horaInicio, horaFin);
+
+            boolean horaDisponible = false;
+            for (int j = horaInicio; j <= horaFin; j++) {
+                for (int hora : listaHoras) {
+                    if (hora == i) {
+                        horaDisponible = true;
+                    }
+                    else{
+                        horaDisponible = false;
+                    }
+                
+                }
+            }
+
+            if (horaDisponible == true){
+                for (i= horaInicio; i <= rango.length; i++)
+                    listaHoras[i] = null;
+            }
         }
-
-
+    
     }
 
     public void agregarListaEspera(int Numerodesolocitud) {
