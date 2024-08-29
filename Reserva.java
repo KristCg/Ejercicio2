@@ -1,5 +1,3 @@
-package Ejercicio2;
-
 import java.sql.Date;
 import java.sql.Time;
 

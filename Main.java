@@ -2,10 +2,6 @@ import java.sql.Date;
 import java.sql.Time;
 import java.util.Scanner;
 
-import Ejercicio2.Reserva;
-import Ejercicio2.Solicitud;
-import Ejercicio2.Salones;
-
 public class Main {
     public static void main(String[] args) {
         Salones[] salones = {
@@ -104,7 +100,7 @@ public class Main {
                     System.out.print("Lista de Espera: ");
                     if (salon.getListaEspera().length > 0) {
                         for (int Solicitud : salon.getListaEspera()) {
-                            System.out.print(solicitud + " ");
+                            System.out.print(Solicitud + " ");
                         }
                     } else {
                         System.out.print("No hay solicitudes en espera.");

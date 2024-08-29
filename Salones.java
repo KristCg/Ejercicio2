@@ -36,7 +36,6 @@ public class Salones {
     public int getCapacidad() {
         return Capacidad;
     }
-   
     public int[] getListaEspera() {
         return ListaEspera;
     }
