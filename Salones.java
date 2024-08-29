@@ -9,7 +9,7 @@ public class Salones{
 
 
 
-    public Salones(int numero, string tipo, double costo, int capacidad){
+    public Salones(int numero, String tipo, double costo, int capacidad){
         this.Numero = numero;
         this.Tipo = tipo;
         this.Costo = costo;
