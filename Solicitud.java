@@ -2,59 +2,59 @@ package Ejercicio2;
 
 import java.sql.Date;
 import java.sql.Time;
-//import java.util.List;
 
-public class Solicitud{
-    private static int contador = 0 ;
+
+public class Solicitud {
+    private static int contador = 0;
     private int numeroSolicitud;
     private String nombre;
     private String encargado;
     private String tipoEvento;
+    private int cantidadPersonas;
     private Date fecha;
     private Time horaInicio;
     private Time horaFin;
 
-    public Solicitud(String nombre, String encargado,String tipoEvento, Date fecha, Time horaInicio, Time horaFin){
+    public Solicitud(String nombre, String encargado, String tipoEvento, int cantidadPersonas, Date fecha, Time horaInicio, Time horaFin) {
         this.numeroSolicitud = ++contador;
         this.nombre = nombre;
         this.encargado = encargado;
         this.tipoEvento = tipoEvento;
+        this.cantidadPersonas = cantidadPersonas;
         this.fecha = fecha;
         this.horaInicio = horaInicio;
         this.horaFin = horaFin;
     }
-    public int getNumeroSolicitud(){
+
+    public int getNumeroSolicitud() {
         return numeroSolicitud;
     }
-    public String getNombre(){
+
+    public String getNombre() {
         return nombre;
     }
-    public String getEncargado(){
+
+    public String getEncargado() {
         return encargado;
     }
-    public String getTipoEvento(){
+
+    public String getTipoEvento() {
         return tipoEvento;
     }
-    public Date getFecha(){
+
+    public int getCantidadPersonas() {
+        return cantidadPersonas;
+    }
+
+    public Date getFecha() {
         return fecha;
     }
-    public Time getHoraInicio(){
+
+    public Time getHoraInicio() {
         return horaInicio;
-        
     }
-    public Time getHoraFin(){
+
+    public Time getHoraFin() {
         return horaFin;
     }
-    /*public boolean verificarConflicto(boolean validarDisponibilidad) {
-        for ( ValidarDisponibilidadvalidarDisponibilidad : Salones) {
-            if (reserva.getFecha().equals(this.fecha)) {
-                if ((this.horaInicio.before(reserva.getHorario()) && this.horaFin.after(reserva.getHorario())) ||
-                    (this.horaInicio.equals(reserva.getHorario()) && this.horaFin.after(reserva.getHorario())) ||
-                    (this.horaInicio.before(reserva.getHorario()) && this.horaFin.equals(reserva.getHorario()))) {
-                    return true;
-                }
-            }
-        }
-        return false;
-        }*/
 }
